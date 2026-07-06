@@ -1,0 +1,26 @@
+run:
+  timeout: 3m
+  tests: true
+
+linters:
+  enable:
+    - errcheck
+    - govet
+    - ineffassign
+    - staticcheck
+    - unused
+    - gofmt
+    - goimports
+    - revive
+    - misspell
+    - unconvert
+    - bodyclose
+    - errorlint
+    - gocritic
+
+issues:
+  exclude-rules:
+    # Test helpers use naked returns / long funcs freely.
+    - path: _test\.go
+      linters:
+        - errcheck
